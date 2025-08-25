@@ -1,726 +1,721 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-
-* {
-    font-family: 'Rajdhani', sans-serif;
-}
-
-.tech-font {
-    font-family: 'Orbitron', monospace;
-}
-
-.gradient-bg {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-}
-
-.tech-grid {
-    background-image: 
-        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 30px 30px;
-    animation: gridMove 20s linear infinite;
-}
-
-@keyframes gridMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 30px 30px; }
-}
-
-/* 3D Robot with Eye Tracking */
-.robot-container {
-    width: 120px;
-    height: 160px;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: robotFloat 4s ease-in-out infinite;
-}
-
-@keyframes robotFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-}
-
-
-/* Robot Head */
-.robot-head {
-    width: 80px;
-    height: 60px;
-    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-    border: 2px solid #00ffff;
-    border-radius: 15px;
-    position: relative;
-    margin: 0 auto 5px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-}
-
-/* Robot Antennas */
-.robot-antenna {
-    position: absolute;
-    width: 3px;
-    height: 15px;
-    background: linear-gradient(180deg, #00ffff, #0088cc);
-    border-radius: 2px;
-    top: -15px;
-    animation: antennaGlow 2s ease-in-out infinite;
-}
-
-.robot-antenna:nth-child(1) { left: 20px; }
-.robot-antenna-2 { left: 55px; animation-delay: 1s; }
-
-.robot-antenna::after {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -2px;
-    width: 7px;
-    height: 7px;
-    background: #00ffff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #00ffff;
-}
-
-@keyframes antennaGlow {
-    0%, 100% { box-shadow: 0 0 5px #00ffff; }
-    50% { box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff; }
-}
-
-/* Robot Eyes */
-.robot-eye {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, #000000, #333333);
-    border: 2px solid #00ffff;
-    border-radius: 50%;
-    top: 15px;
-    overflow: hidden;
-}
-
-.robot-eye-left { left: 15px; }
-.robot-eye-right { right: 15px; }
-
-.robot-pupil {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: radial-gradient(circle at 30% 30%, #00ffff, #0066cc);
-    border-radius: 50%;
-    top: 4px;
-    left: 4px;
-    transition: all 0.1s ease-out;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-}
-
-.robot-glint {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    top: 6px;
-    left: 8px;
-    pointer-events: none;
-}
-
-/* Robot Mouth */
-.robot-mouth {
-    position: absolute;
-    width: 25px;
-    height: 8px;
-    background: #00ffff;
-    border-radius: 0 0 15px 15px;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: mouthPulse 3s ease-in-out infinite;
-}
-
-@keyframes mouthPulse {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; box-shadow: 0 0 10px #00ffff; }
-}
-
-/* Robot Head Details */
-.robot-detail {
-    position: absolute;
-    background: #00ffff;
-    opacity: 0.6;
-}
-
-.robot-detail-1 {
-    width: 15px;
-    height: 2px;
-    top: 8px;
-    left: 5px;
-    animation: detailBlink 4s ease-in-out infinite;
-}
-
-.robot-detail-2 {
-    width: 15px;
-    height: 2px;
-    top: 8px;
-    right: 5px;
-    animation: detailBlink 4s ease-in-out infinite;
-    animation-delay: 2s;
-}
-
-@keyframes detailBlink {
-    0%, 90%, 100% { opacity: 0.6; }
-    95% { opacity: 1; box-shadow: 0 0 5px #00ffff; }
-}
-
-/* Robot Body */
-.robot-body {
-    width: 90px;
-    height: 70px;
-    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-    border: 2px solid #00ffff;
-    border-radius: 10px;
-    position: relative;
-    margin: 0 auto 5px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-}
-
-/* Robot Chest Panel */
-.robot-chest-panel {
-    position: absolute;
-    width: 60px;
-    height: 40px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #00ffff;
-    border-radius: 5px;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-}
-
-.robot-led {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    animation: ledPulse 2s ease-in-out infinite;
-}
-
-.robot-led-1 { 
-    background: #00ff00; 
-    box-shadow: 0 0 8px #00ff00;
-}
-
-.robot-led-2 { 
-    background: #ffff00; 
-    box-shadow: 0 0 8px #ffff00;
-    animation-delay: 0.7s; 
-}
-
-.robot-led-3 { 
-    background: #ff0000; 
-    box-shadow: 0 0 8px #ff0000;
-    animation-delay: 1.4s; 
-}
-
-@keyframes ledPulse {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
-}
-
-/* Robot Arms */
-.robot-arm {
-    position: absolute;
-    width: 15px;
-    height: 50px;
-    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-    border: 2px solid #00ffff;
-    border-radius: 8px;
-    top: 10px;
-}
-
-.robot-arm-left { 
-    left: -18px; 
-    animation: armMove 6s ease-in-out infinite;
-}
-
-.robot-arm-right { 
-    right: -18px; 
-    animation: armMove 6s ease-in-out infinite;
-    animation-delay: 3s;
-}
-
-@keyframes armMove {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(10deg); }
-}
-
-/* Robot Base */
-.robot-base {
-    width: 100px;
-    height: 25px;
-    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-    border: 2px solid #00ffff;
-    border-radius: 15px;
-    position: relative;
-    margin: 0 auto;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-}
-
-/* Robot Wheels */
-.robot-wheel {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, #333333, #111111);
-    border: 2px solid #00ffff;
-    border-radius: 50%;
-    top: -10px;
-    animation: wheelSpin 3s linear infinite;
-}
-
-.robot-wheel-left { left: 10px; }
-.robot-wheel-right { right: 10px; animation-delay: 1.5s; }
-
-@keyframes wheelSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Robot Holographic Aura */
-.robot-aura {
-    position: absolute;
-    width: 140px;
-    height: 180px;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    border-radius: 50%;
-    top: -10px;
-    left: -10px;
-    animation: auraRotate 8s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes auraRotate {
-    0% { transform: rotate(0deg); opacity: 0.3; }
-    50% { opacity: 0.6; }
-    100% { transform: rotate(360deg); opacity: 0.3; }
-}
-
-/* Static Background Elements */
-.matrix-rain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.1;
-}
-
-.matrix-column {
-    position: absolute;
-    color: #00ff00;
-    font-family: 'Orbitron', monospace;
-    font-size: 14px;
-    animation: matrixFall 10s linear infinite;
-}
-
-@keyframes matrixFall {
-    0% { transform: translateY(-100vh); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
-}
-
-/* Enhanced Card Effects */
-.tech-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.tech-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-    transition: left 0.5s ease;
-}
-
-.tech-card:hover::before {
-    left: 100%;
-}
-
-.tech-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(0, 255, 255, 0.8);
-    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
-}
-
-/* Glitch Effect */
-.glitch {
-    position: relative;
-}
-
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.glitch::before {
-    animation: glitch1 2s infinite;
-    color: #ff00ff;
-    z-index: -1;
-}
-
-.glitch::after {
-    animation: glitch2 2s infinite;
-    color: #00ffff;
-    z-index: -2;
-}
-
-@keyframes glitch1 {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-}
-
-@keyframes glitch2 {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(2px, 2px); }
-    40% { transform: translate(2px, -2px); }
-    60% { transform: translate(-2px, 2px); }
-    80% { transform: translate(-2px, -2px); }
-}
-
-/* Fade in animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Skill bars with tech effect */
-.skill-bar {
-    transition: width 2s ease-in-out;
-    position: relative;
-    overflow: hidden;
-}
-
-.skill-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 20px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-    animation: skillScan 2s linear infinite;
-}
-
-@keyframes skillScan {
-    0% { left: -20px; }
-    100% { left: 100%; }
-}
-
-/* Interactive background */
-.interactive-bg {
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-        rgba(0, 255, 255, 0.1) 0%, 
-        rgba(255, 0, 255, 0.05) 30%, 
-        transparent 70%);
-}
-
-/* Enhanced Name Effects */
-.quantum-text {
-    position: relative;
-    z-index: 10;
-    text-shadow: 
-        0 0 8px rgba(0, 255, 255, 0.5),
-        0 0 16px rgba(0, 255, 255, 0.3),
-        0 0 24px rgba(0, 255, 255, 0.2),
-        0 0 32px rgba(255, 0, 255, 0.15);
-    animation: quantumGlow 2.5s ease-in-out infinite;
-    filter: brightness(1.1); /* Kurangi dari 1.2 */
-    color: white; /* Pastikan warna dasar tetap terbaca */
-}
-
-@keyframes quantumGlow {
-    0%, 100% { 
-        text-shadow: 
-            0 0 12px rgba(0, 255, 255, 0.6),
-            0 0 20px rgba(0, 255, 255, 0.4),
-            0 0 30px rgba(0, 255, 255, 0.2),
-            0 0 40px rgba(255, 0, 255, 0.1);
-        filter: brightness(1.1) saturate(1.0);
+/* ==================== 
+     GLOBAL STYLES & RESET 
+     ==================== */
+     * {
+        font-family: 'Rajdhani', sans-serif;
     }
-    50% { 
+    
+    .tech-font {
+        font-family: 'Orbitron', monospace;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    
+    /* ==================== 
+         BACKGROUND EFFECTS 
+         ==================== */
+    .gradient-bg {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    }
+    
+    .tech-grid {
+        background-image: 
+            linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 30px 30px;
+        animation: gridMove 20s linear infinite;
+    }
+    
+    @keyframes gridMove {
+        0% { background-position: 0 0; }
+        100% { background-position: 30px 30px; }
+    }
+    
+    
+    /* ==================== 
+         MATRIX RAIN ANIMATION 
+         ==================== */
+    .matrix-rain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.1;
+    }
+    
+    .matrix-column {
+        position: absolute;
+        color: #00ff00;
+        font-family: 'Orbitron', monospace;
+        font-size: 14px;
+        animation: matrixFall 10s linear infinite;
+    }
+    
+    @keyframes matrixFall {
+        0% { transform: translateY(-100vh); opacity: 1; }
+        100% { transform: translateY(100vh); opacity: 0; }
+    }
+    
+    /* ==================== 
+     3D ROBOT POSITIONING 
+     ==================== */
+    #robot3D {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 60;
+        transform: scale(0.9);
+    }
+    /* ==================== 
+         3D ROBOT WITH EYE TRACKING 
+         ==================== */
+    .robot-container {
+        width: 120px;
+        height: 160px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: robotFloat 4s ease-in-out infinite;
+    }
+    
+    @keyframes robotFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+    }
+    
+    /* Robot Head */
+    .robot-head {
+        width: 80px;
+        height: 60px;
+        background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        border: 2px solid #00ffff;
+        border-radius: 15px;
+        position: relative;
+        margin: 0 auto 5px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+    
+    /* Antennas */
+    .robot-antenna {
+        position: absolute;
+        width: 3px;
+        height: 15px;
+        background: linear-gradient(180deg, #00ffff, #0088cc);
+        border-radius: 2px;
+        top: -15px;
+        animation: antennaGlow 2s ease-in-out infinite;
+    }
+    
+    .robot-antenna:nth-child(1) { left: 20px; }
+    .robot-antenna-2 { left: 55px; animation-delay: 1s; }
+    
+    .robot-antenna::after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -2px;
+        width: 7px;
+        height: 7px;
+        background: #00ffff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00ffff;
+    }
+    
+    @keyframes antennaGlow {
+        0%, 100% { box-shadow: 0 0 5px #00ffff; }
+        50% { box-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff; }
+    }
+    
+    /* Eyes */
+    .robot-eye {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle, #000000, #333333);
+        border: 2px solid #00ffff;
+        border-radius: 50%;
+        top: 15px;
+        overflow: hidden;
+    }
+    
+    .robot-eye-left { left: 15px; }
+    .robot-eye-right { right: 15px; }
+    
+    .robot-pupil {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: radial-gradient(circle at 30% 30%, #00ffff, #0066cc);
+        border-radius: 50%;
+        top: 4px;
+        left: 4px;
+        transition: all 0.1s ease-out;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+    
+    .robot-glint {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        top: 6px;
+        left: 8px;
+        pointer-events: none;
+    }
+    
+    /* Mouth */
+    .robot-mouth {
+        position: absolute;
+        width: 25px;
+        height: 8px;
+        background: #00ffff;
+        border-radius: 0 0 15px 15px;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: mouthPulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes mouthPulse {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1; box-shadow: 0 0 10px #00ffff; }
+    }
+    
+    /* Head Details */
+    .robot-detail {
+        position: absolute;
+        background: #00ffff;
+        opacity: 0.6;
+    }
+    
+    .robot-detail-1 {
+        width: 15px;
+        height: 2px;
+        top: 8px;
+        left: 5px;
+        animation: detailBlink 4s ease-in-out infinite;
+    }
+    
+    .robot-detail-2 {
+        width: 15px;
+        height: 2px;
+        top: 8px;
+        right: 5px;
+        animation: detailBlink 4s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+    
+    @keyframes detailBlink {
+        0%, 90%, 100% { opacity: 0.6; }
+        95% { opacity: 1; box-shadow: 0 0 5px #00ffff; }
+    }
+    
+    /* Body */
+    .robot-body {
+        width: 90px;
+        height: 70px;
+        background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        border: 2px solid #00ffff;
+        border-radius: 10px;
+        position: relative;
+        margin: 0 auto 5px;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+    
+    /* Chest Panel */
+    .robot-chest-panel {
+        position: absolute;
+        width: 60px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid #00ffff;
+        border-radius: 5px;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+    }
+    
+    .robot-led {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        animation: ledPulse 2s ease-in-out infinite;
+    }
+    
+    .robot-led-1 { 
+        background: #00ff00; 
+        box-shadow: 0 0 8px #00ff00;
+    }
+    
+    .robot-led-2 { 
+        background: #ffff00; 
+        box-shadow: 0 0 8px #ffff00;
+        animation-delay: 0.7s; 
+    }
+    
+    .robot-led-3 { 
+        background: #ff0000; 
+        box-shadow: 0 0 8px #ff0000;
+        animation-delay: 1.4s; 
+    }
+    
+    @keyframes ledPulse {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.2); }
+    }
+    
+    /* Arms */
+    .robot-arm {
+        position: absolute;
+        width: 15px;
+        height: 50px;
+        background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        border: 2px solid #00ffff;
+        border-radius: 8px;
+        top: 10px;
+    }
+    
+    .robot-arm-left { 
+        left: -18px; 
+        animation: armMove 6s ease-in-out infinite;
+    }
+    
+    .robot-arm-right { 
+        right: -18px; 
+        animation: armMove 6s ease-in-out infinite;
+        animation-delay: 3s;
+    }
+    
+    @keyframes armMove {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(10deg); }
+    }
+    
+    /* Base */
+    .robot-base {
+        width: 100px;
+        height: 25px;
+        background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        border: 2px solid #00ffff;
+        border-radius: 15px;
+        position: relative;
+        margin: 0 auto;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+    
+    /* Wheels */
+    .robot-wheel {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle, #333333, #111111);
+        border: 2px solid #00ffff;
+        border-radius: 50%;
+        top: -10px;
+        animation: wheelSpin 3s linear infinite;
+    }
+    
+    .robot-wheel-left { left: 10px; }
+    .robot-wheel-right { right: 10px; animation-delay: 1.5s; }
+    
+    @keyframes wheelSpin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    /* Holographic Aura */
+    .robot-aura {
+        position: absolute;
+        width: 140px;
+        height: 180px;
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        border-radius: 50%;
+        top: -10px;
+        left: -10px;
+        animation: auraRotate 8s linear infinite;
+        pointer-events: none;
+    }
+    
+    @keyframes auraRotate {
+        0% { transform: rotate(0deg); opacity: 0.3; }
+        50% { opacity: 0.6; }
+        100% { transform: rotate(360deg); opacity: 0.3; }
+    }
+    
+    
+    /* ==================== 
+         CARD & HOVER EFFECTS 
+         ==================== */
+    .tech-card {
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        backdrop-filter: blur(15px);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .tech-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+    
+    .tech-card:hover::before {
+        left: 100%;
+    }
+    
+    .tech-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(0, 255, 255, 0.8);
+        box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+    }
+    
+    
+    /* ==================== 
+         GLITCH TEXT EFFECT 
+         ==================== */
+    .glitch {
+        position: relative;
+    }
+    
+    .glitch::before,
+    .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .glitch::before {
+        animation: glitch1 2s infinite;
+        color: #ff00ff;
+        z-index: -1;
+    }
+    
+    .glitch::after {
+        animation: glitch2 2s infinite;
+        color: #00ffff;
+        z-index: -2;
+    }
+    
+    @keyframes glitch1 {
+        0%, 100% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(-2px, -2px); }
+        60% { transform: translate(2px, 2px); }
+        80% { transform: translate(2px, -2px); }
+    }
+    
+    @keyframes glitch2 {
+        0%, 100% { transform: translate(0); }
+        20% { transform: translate(2px, 2px); }
+        40% { transform: translate(2px, -2px); }
+        60% { transform: translate(-2px, 2px); }
+        80% { transform: translate(-2px, -2px); }
+    }
+    
+    
+    /* ==================== 
+         FADE-IN ANIMATIONS 
+         ==================== */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+    
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .fade-in-blur {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(4px);
+        transition: all 0.7s ease-out;
+    }
+    
+    .fade-in-blur.visible {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+    
+    
+    /* ==================== 
+         SKILL BAR ANIMATION 
+         ==================== */
+    .skill-bar {
+        transition: width 2s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .skill-bar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 20px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        animation: skillScan 2s linear infinite;
+    }
+    
+    @keyframes skillScan {
+        0% { left: -20px; }
+        100% { left: 100%; }
+    }
+    
+    
+    /* ==================== 
+         INTERACTIVE BACKGROUND 
+         ==================== */
+    .interactive-bg {
+        background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+            rgba(0, 255, 255, 0.1) 0%, 
+            rgba(255, 0, 255, 0.05) 30%, 
+            transparent 70%);
+    }
+    
+    
+    /* ==================== 
+         NAME & QUANTUM EFFECTS 
+         ==================== */
+    .quantum-text {
+        position: relative;
+        z-index: 10;
+        text-shadow: 
+            0 0 8px rgba(0, 255, 255, 0.5),
+            0 0 16px rgba(0, 255, 255, 0.3),
+            0 0 24px rgba(0, 255, 255, 0.2),
+            0 0 32px rgba(255, 0, 255, 0.15);
+        animation: quantumGlow 2.5s ease-in-out infinite;
+        filter: brightness(1.1);
+        color: white;
+    }
+    
+    @keyframes quantumGlow {
+        0%, 100% { 
+            text-shadow: 
+                0 0 12px rgba(0, 255, 255, 0.6),
+                0 0 20px rgba(0, 255, 255, 0.4),
+                0 0 30px rgba(0, 255, 255, 0.2),
+                0 0 40px rgba(255, 0, 255, 0.1);
+            filter: brightness(1.1) saturate(1.0);
+        }
+        50% { 
+            text-shadow: 
+                0 0 15px rgba(0, 255, 255, 0.8),
+                0 0 25px rgba(0, 255, 255, 0.6),
+                0 0 45px rgba(0, 255, 255, 0.4),
+                0 0 55px rgba(255, 0, 255, 0.2);
+            filter: brightness(1.2) saturate(1.1);
+        }
+    }
+    
+    .quantum-backdrop {
+        position: absolute;
+        top: -20px;
+        left: -40px;
+        right: -40px;
+        bottom: -20px;
+        background: radial-gradient(ellipse at center, 
+            rgba(0, 255, 255, 0.15) 0%, 
+            rgba(255, 0, 255, 0.1) 30%, 
+            rgba(0, 255, 255, 0.05) 60%, 
+            transparent 80%);
+        border-radius: 20px;
+        animation: backdropPulse 3s ease-in-out infinite;
+        filter: blur(8px);
+        z-index: -1;
+    }
+    
+    @keyframes backdropPulse {
+        0%, 100% { 
+            opacity: 0.6;
+            transform: scale(1);
+        }
+        50% { 
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    }
+    
+    .scanning-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #00ffff, transparent);
+        animation: scanName 4s linear infinite;
+        opacity: 0.8;
+    }
+    
+    @keyframes scanName {
+        0% { transform: translateY(-20px); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(120px); opacity: 0; }
+    }
+    
+    .name-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: #00ffff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00ffff;
+        animation: particleFloat 6s ease-in-out infinite;
+    }
+    
+    .name-particle-1 {
+        top: -20px;
+        left: -30px;
+        animation-delay: 0s;
+    }
+    
+    .name-particle-2 {
+        top: -10px;
+        right: -40px;
+        background: #ff00ff;
+        box-shadow: 0 0 10px #ff00ff;
+        animation-delay: 1s;
+    }
+    
+    .name-particle-3 {
+        bottom: -15px;
+        left: -20px;
+        background: #ffff00;
+        box-shadow: 0 0 10px #ffff00;
+        animation-delay: 2s;
+    }
+    
+    .name-particle-4 {
+        bottom: -25px;
+        right: -30px;
+        animation-delay: 3s;
+    }
+    
+    .name-particle-5 {
+        top: 50%;
+        left: -50px;
+        background: #ff00ff;
+        box-shadow: 0 0 10px #ff00ff;
+        animation-delay: 4s;
+    }
+    
+    .name-particle-6 {
+        top: 50%;
+        right: -50px;
+        background: #ffff00;
+        box-shadow: 0 0 10px #ffff00;
+        animation-delay: 5s;
+    }
+    
+    @keyframes particleFloat {
+        0%, 100% { 
+            transform: translateY(0px) scale(1);
+            opacity: 0.7;
+        }
+        25% { 
+            transform: translateY(-15px) scale(1.2);
+            opacity: 1;
+        }
+        50% { 
+            transform: translateY(-5px) scale(0.8);
+            opacity: 0.8;
+        }
+        75% { 
+            transform: translateY(-20px) scale(1.1);
+            opacity: 1;
+        }
+    }
+    
+    
+    /* ==================== 
+         LOGO "F" ROTATION 
+         ==================== */
+    #logo-f {
+        animation: rotateF 20s linear infinite;
+    }
+    
+    #logo-f:hover {
+        filter: drop-shadow(0 0 10px #00e5ff);
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+    }
+    
+    @keyframes rotateF {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    
+    /* ==================== 
+         FOOTER & GENERAL ELEMENTS 
+         ==================== */
+    footer {
+        animation: fadeFromBottom 0.8s ease-out;
+    }
+    
+    @keyframes fadeFromBottom {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    footer:hover {
+        border-color: rgba(0, 255, 255, 0.6);
+        box-shadow: 0 -2px 10px rgba(0, 255, 255, 0.1);
+    }
+    
+    .text-animated-large {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        min-width: 200px;
+        text-align: center;
+        color: #00ffff;
         text-shadow: 
             0 0 15px rgba(0, 255, 255, 0.8),
             0 0 25px rgba(0, 255, 255, 0.6),
             0 0 45px rgba(0, 255, 255, 0.4),
-            0 0 55px rgba(255, 0, 255, 0.2);
-        filter: brightness(1.2) saturate(1.1);
+            0 0 65px rgba(255, 0, 255, 0.3),
+            0 0 85px rgba(255, 0, 255, 0.2);
+        animation: quantumGlow 2.5s ease-in-out infinite;
+        filter: brightness(1.2);
+        transition: transform 0.2s ease, filter 0.3s ease;
+        cursor: pointer;
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        border-radius: 0.5rem;
+        background: rgba(0, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
     }
-}
-
-/* Holographic backdrop for name */
-.quantum-backdrop {
-    position: absolute;
-    top: -20px;
-    left: -40px;
-    right: -40px;
-    bottom: -20px;
-    background: radial-gradient(ellipse at center, 
-        rgba(0, 255, 255, 0.15) 0%, 
-        rgba(255, 0, 255, 0.1) 30%, 
-        rgba(0, 255, 255, 0.05) 60%, 
-        transparent 80%);
-    border-radius: 20px;
-    animation: backdropPulse 3s ease-in-out infinite;
-    filter: blur(8px);
-    z-index: -1;
-}
-
-@keyframes backdropPulse {
-    0%, 100% { 
-        opacity: 0.6;
-        transform: scale(1);
+    
+    .text-animated-large:hover {
+        filter: brightness(1.5) saturate(1.2);
+        transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
     }
-    50% { 
-        opacity: 1;
-        transform: scale(1.05);
-    }
-}
-
-/* Scanning line effect */
-.scanning-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #00ffff, transparent);
-    animation: scanName 4s linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes scanName {
-    0% { transform: translateY(-20px); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(120px); opacity: 0; }
-}
-
-/* Floating particles around name */
-.name-particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #00ffff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #00ffff;
-    animation: particleFloat 6s ease-in-out infinite;
-}
-
-.name-particle-1 {
-    top: -20px;
-    left: -30px;
-    animation-delay: 0s;
-}
-
-.name-particle-2 {
-    top: -10px;
-    right: -40px;
-    background: #ff00ff;
-    box-shadow: 0 0 10px #ff00ff;
-    animation-delay: 1s;
-}
-
-.name-particle-3 {
-    bottom: -15px;
-    left: -20px;
-    background: #ffff00;
-    box-shadow: 0 0 10px #ffff00;
-    animation-delay: 2s;
-}
-
-.name-particle-4 {
-    bottom: -25px;
-    right: -30px;
-    animation-delay: 3s;
-}
-
-.name-particle-5 {
-    top: 50%;
-    left: -50px;
-    background: #ff00ff;
-    box-shadow: 0 0 10px #ff00ff;
-    animation-delay: 4s;
-}
-
-.name-particle-6 {
-    top: 50%;
-    right: -50px;
-    background: #ffff00;
-    box-shadow: 0 0 10px #ffff00;
-    animation-delay: 5s;
-}
-
-@keyframes particleFloat {
-    0%, 100% { 
-        transform: translateY(0px) scale(1);
-        opacity: 0.7;
-    }
-    25% { 
-        transform: translateY(-15px) scale(1.2);
-        opacity: 1;
-    }
-    50% { 
-        transform: translateY(-5px) scale(0.8);
-        opacity: 0.8;
-    }
-    75% { 
-        transform: translateY(-20px) scale(1.1);
-        opacity: 1;
-    }
-}   
-
-/* Animasi Logo "F" */
-@keyframes rotateF {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-#logo-f {
-    animation: rotateF 20s linear infinite;
-}
-
-#logo-f:hover {
-    filter: drop-shadow(0 0 10px #00e5ff);
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* Efek Hover pada Footer */
-footer:hover {
-    border-color: rgba(0, 255, 255, 0.6);
-    box-shadow: 0 -2px 10px rgba(0, 255, 255, 0.1);
-}
-
-/* Animasi Muncul */
-footer {
-    animation: fadeFromBottom 0.8s ease-out;
-}
-
-@keyframes fadeFromBottom {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-#robot3D {
-    position: fixed;
-    bottom: 8px;
-    right: 8px;
-    z-index: 60; /* 🔥 Ini penting! */
-}
-
-/* Enhanced Fade In Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-/* Optional: Fade dengan blur (efek quantum) */
-.fade-in-blur {
-    opacity: 0;
-    transform: translateY(20px);
-    filter: blur(4px);
-    transition: all 0.7s ease-out;
-}
-
-.fade-in-blur.visible {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-}
-
-/* Teks Animasi Besar (Setara Tombol) */
-.text-animated-large {
-    display: inline-block;
-    font-weight: bold;
-    font-size: 1.5rem;          /* Ukuran besar, seperti tombol */
-    padding: 1rem 2rem;         /* Setara dengan padding tombol */
-    min-width: 200px;           /* Lebar minimal seperti tombol */
-    text-align: center;
-    color: #00ffff;
-    text-shadow: 
-        0 0 15px rgba(0, 255, 255, 0.8),
-        0 0 25px rgba(0, 255, 255, 0.6),
-        0 0 45px rgba(0, 255, 255, 0.4),
-        0 0 65px rgba(255, 0, 255, 0.3),
-        0 0 85px rgba(255, 0, 255, 0.2);
-    animation: quantumGlow 2.5s ease-in-out infinite;
-    filter: brightness(1.2);
-    transition: transform 0.2s ease, filter 0.3s ease;
-    cursor: pointer;
-    border: 1px solid rgba(0, 255, 255, 0.3); /* Garis tipis seperti tombol */
-    border-radius: 0.5rem; /* Rounded corners */
-    background: rgba(0, 255, 255, 0.1); /* Latar belakang transparan biru muda */
-    backdrop-filter: blur(4px); /* Efek kaca */
-}
-
-/* Efek hover: seperti tombol */
-.text-animated-large:hover {
-    filter: brightness(1.5) saturate(1.2);
-    transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-}
-
-/* Glitch Effect (tetap sama) */
-.text-animated-large::before,
-.text-animated-large::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.text-animated-large::before {
-    animation: glitch1 2s infinite;
-    color: #ff00ff;
-}
-
-.text-animated-large::after {
-    animation: glitch2 2s infinite;
-    color: #00ffff;
-}
