@@ -611,22 +611,12 @@ footer{
 
 }
 
-/* ========================= */
-/* MOBILE HERO FIX */
-/* ========================= */
-
 @media screen and (max-width:768px){
 
     .hero{
-
-        height:55vh;
-
-        background-size:cover;
-
-        background-position:right center;
-
-        border-radius:24px;
-
+        background:
+            url("banner-mobile.jpg")
+            center center/cover no-repeat;
     }
 
 }
