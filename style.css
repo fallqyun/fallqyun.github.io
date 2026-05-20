@@ -498,4 +498,117 @@ footer{
     }
 }
 
+/* ========================= */
+/* MOBILE RESPONSIVE FIX */
+/* ========================= */
+
+@media screen and (max-width: 768px){
+
+    /* BODY */
+    body{
+        overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+    .navbar{
+        width:95%;
+        height:auto;
+
+        padding:18px 20px;
+
+        flex-direction:column;
+        gap:15px;
+
+        border-radius:30px;
+    }
+
+    .logo{
+        position:relative;
+
+        left:auto;
+        transform:none;
+
+        order:-1;
+    }
+
+    .nav-group{
+        width:100%;
+
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    /* HERO */
+    .hero{
+        height:70vh;
+
+        border-radius:28px;
+
+        background-position:center;
+    }
+
+    /* ABOUT SECTION */
+    .about-section{
+        padding:40px 20px;
+    }
+
+    .about-container{
+        grid-template-columns:1fr !important;
+
+        gap:25px;
+    }
+
+    .about-center{
+        text-align:center;
+        align-items:center;
+    }
+
+    .about-center h2{
+        font-size:38px !important;
+
+        line-height:1.2;
+    }
+
+    .about-card{
+        padding:25px;
+    }
+
+    .about-image img{
+        max-width:220px;
+    }
+
+    /* TIMELINE */
+    .journey-section{
+        padding:40px 20px;
+    }
+
+    .journey-header h2{
+        font-size:38px;
+    }
+
+    .timeline-item{
+        padding-left:30px;
+    }
+
+    .timeline-content{
+        padding:22px;
+    }
+
+    /* RUNNING TEXT */
+    .running-track span{
+        font-size:13px;
+    }
+
+    /* FOOTER */
+    .footer-socials{
+        flex-direction:column;
+    }
+
+    .social-link,
+    .visit-counter{
+        width:100%;
+    }
+
+}
+
 
