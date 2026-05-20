@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Fallqyun | Projects</title>
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- LOCAL CSS -->
+    <style>
+
+        /* ========================= */
+        /* PROJECTS PAGE */
+        /* ========================= */
+
+        .projects-page{
+            width:92%;
+
+            max-width:1500px;
+
+            margin:auto;
+
+            padding:
+                130px 0
+                120px;
+        }
+
+        /* ========================= */
+        /* HEADER */
+        /* ========================= */
+
+        .projects-header{
+            margin-bottom:60px;
+        }
+
+        .projects-tag{
+            display:inline-flex;
+            align-items:center;
+
+            padding:10px 18px;
+
+            border-radius:999px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            color:#00ff9f;
+
+            font-size:12px;
+
+            letter-spacing:2px;
+
+            margin-bottom:24px;
+        }
+
+        .projects-header h1{
+            font-size:68px;
+
+            line-height:1;
+
+            margin-bottom:20px;
+
+            color:white;
+        }
+
+        .projects-header p{
+            max-width:700px;
+
+            color:#9f9f9f;
+
+            line-height:1.8;
+
+            font-size:17px;
+        }
+
+        /* ========================= */
+        /* GRID */
+        /* ========================= */
+
+        .projects-grid{
+            display:grid;
+
+            grid-template-columns:
+                repeat(auto-fit,minmax(280px,1fr));
+
+            gap:24px;
+        }
+
+        /* ========================= */
+        /* CARD */
+        /* ========================= */
+
+        .project-card,
+        .document-card{
+            padding:34px;
+
+            border-radius:30px;
+
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            backdrop-filter:blur(10px);
+
+            min-height:420px;
+
+            display:flex;
+            flex-direction:column;
+        }
+
+        /* ========================= */
+        /* ICON */
+        /* ========================= */
+
+        .project-icon,
+        .document-icon{
+            font-size:54px;
+
+            margin-bottom:28px;
+        }
+
+        /* ========================= */
+        /* TITLE */
+        /* ========================= */
+
+        .project-card h2,
+        .document-card h3{
+            font-size:38px;
+
+            line-height:1;
+
+            margin-bottom:22px;
+
+            color:white;
+        }
+
+        /* ========================= */
+        /* DESCRIPTION */
+        /* ========================= */
+
+        .project-card p,
+        .document-card p{
+            color:#a5a5a5;
+
+            line-height:1.8;
+
+            font-size:16px;
+
+            margin-bottom:28px;
+        }
+
+        /* ========================= */
+        /* TECH STACK */
+        /* ========================= */
+
+        .tech-stack{
+            display:flex;
+            flex-wrap:wrap;
+
+            gap:10px;
+
+            margin-bottom:30px;
+        }
+
+        .tech-stack span{
+            padding:10px 16px;
+
+            border-radius:999px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            color:white;
+
+            font-size:13px;
+        }
+
+        /* ========================= */
+        /* BUTTON */
+        /* ========================= */
+
+        .project-btn,
+        .document-btn{
+            margin-top:auto;
+
+            width:100%;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            padding:18px;
+
+            border-radius:18px;
+
+            text-decoration:none;
+
+            font-weight:700;
+        }
+
+        /* PROJECT BUTTON */
+
+        .project-btn{
+            background:
+                linear-gradient(
+                    135deg,
+                    #00ff9f,
+                    #14b8a6
+                );
+
+            color:black;
+        }
+
+        /* DOCUMENT BUTTON */
+
+        .document-btn{
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            color:white;
+        }
+
+        /* ========================= */
+        /* RESPONSIVE */
+        /* ========================= */
+
+        @media (max-width:768px){
+
+            .projects-header h1{
+                font-size:46px;
+            }
+
+            .project-card h2,
+            .document-card h3{
+                font-size:30px;
+            }
+
+            .project-card,
+            .document-card{
+                min-height:auto;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <nav class="navbar">
+
+        <!-- LEFT MENU -->
+        <div class="nav-group left">
+
+            <a href="index.html" class="nav-link">
+                About Me
+            </a>
+
+            <a href="dashboard.html" class="nav-link">
+                Dashboard
+            </a>
+
+        </div>
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <span class="logo-icon"></span>
+
+            Fallqyun
+
+        </div>
+
+        <!-- RIGHT MENU -->
+        <div class="nav-group right">
+
+            <a href="projects.html" class="nav-link">
+                Projects
+            </a>
+
+            <a
+                href="login.html"
+                class="nav-link active"
+                id="authButton"
+            >
+                Login
+            </a>
+
+        </div>
+
+        <!-- INDICATOR -->
+        <div class="indicator"></div>
+
+    </nav>
+
+    <!-- ========================= -->
+    <!-- PROJECTS -->
+    <!-- ========================= -->
+
+    <section class="projects-page">
+
+        <div class="projects-header">
+
+            <span class="projects-tag">
+                PORTFOLIO ARCHIVE
+            </span>
+
+            <h1>
+                Projects & Documents
+            </h1>
+
+            <p>
+                Collection of projects,
+                professional documents,
+                certifications,
+                and work experience archive.
+            </p>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    ⏰
+                </div>
+
+                <h2>
+                    POMODORO ADZAN
+                </h2>
+
+                <p>
+                    Productivity application
+                    combining Pomodoro,
+                    Spotify integration,
+                    and prayer reminders.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+                    <span>Spotify API</span>
+                    <span>CustomTkinter</span>
+
+                </div>
+
+                <a href="https://github.com/fallqyun/Pomodoro_Music_Reminder" class="project-btn">
+                    ACCESS PROJECT
+                </a>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    📊
+                </div>
+
+                <h2>
+                    WA BROADCASTING
+                </h2>
+
+                <p>
+                    WhatsApp automation
+                    broadcasting application
+                    using Excel integration.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+                    <span>Selenium</span>
+                    <span>OpenPyXL</span>
+
+                </div>
+
+                <a href="https://github.com/fallqyun/BroadcastWa" class="project-btn">
+                    ACCESS PROJECT
+                </a>
+
+            </div>
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    ⭐
+                </div>
+
+                <h2>
+                    SCIENTIFIC RESEARCH
+                </h2>
+
+                <p>
+                    AR application for campus
+                    promotion using Unity,
+                    SketchUp and Vuforia.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Unity</span>
+                    <span>Vuforia</span>
+                    <span>SketchUp</span>
+
+                </div>
+
+                <a href="https://github.com/fallqyun/Penelitianilmiah" class="project-btn">
+                    ACCESS PROJECT
+                </a>
+
+            </div>
+
+            <!-- PROJECT 4 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    🌎
+                </div>
+
+                <h2>
+                    APP SKRIPSI
+                </h2>
+
+                <p>
+                    Color detection system
+                    using OpenCV with
+                    audio output integration.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>PyAudio</span>
+
+                </div>
+
+                <a href="https://github.com/fallqyun/APP_Skripsi" class="project-btn">
+                    ACCESS PROJECT
+                </a>
+
+            </div>
+
+            <!-- DOCUMENT 1 -->
+
+            <div class="document-card">
+
+                <div class="document-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    IJASAH S1
+                </h3>
+
+                <p>
+                    Bachelor Degree Certificate
+                    in Informatics Engineering.
+                </p>
+
+                <a href="#" class="document-btn">
+                    VIEW DOCUMENT
+                </a>
+
+            </div>
+
+            <!-- DOCUMENT 2 -->
+
+            <div class="document-card">
+
+                <div class="document-icon">
+                    📜
+                </div>
+
+                <h3>
+                    SK WAPRESMA
+                </h3>
+
+                <p>
+                    Official decree document
+                    for student organization role.
+                </p>
+
+                <a href="#" class="document-btn">
+                    VIEW DOCUMENT
+                </a>
+
+            </div>
+
+            <!-- DOCUMENT 3 -->
+
+            <div class="document-card">
+
+                <div class="document-icon">
+                    📄
+                </div>
+
+                <h3>
+                    CV / RESUME
+                </h3>
+
+                <p>
+                    Professional curriculum vitae
+                    and personal portfolio.
+                </p>
+
+                <a href="#" class="document-btn">
+                    VIEW DOCUMENT
+                </a>
+
+            </div>
+
+            <!-- DOCUMENT 4 -->
+
+            <div class="document-card">
+
+                <div class="document-icon">
+                    🏢
+                </div>
+
+                <h3>
+                    PAKLARING UCA
+                </h3>
+
+                <p>
+                    Work experience certificate
+                    from Universitas Cendekia Abditama.
+                </p>
+
+                <a href="#" class="document-btn">
+                    VIEW DOCUMENT
+                </a>
+
+            </div>
+
+            <!-- DOCUMENT 5 -->
+
+            <div class="document-card">
+
+                <div class="document-icon">
+                    💼
+                </div>
+
+                <h3>
+                    PAKLARING ZCOMM
+                </h3>
+
+                <p>
+                    Professional certificate
+                    from PT ZComm Network Solution.
+                </p>
+
+                <a href="#" class="document-btn">
+                    VIEW DOCUMENT
+                </a>
+
+            </div>
+
+            <!-- DOCUMENT 6 -->
+
+            <div class="document-card">
+
+                <div class="document-icon">
+                    🏅
+                </div>
+
+                <h3>
+                    CERTIFICATION
+                </h3>
+
+                <p>
+                    Collection of completed
+                    certifications and training.
+                </p>
+
+                <a href="#" class="document-btn">
+                    VIEW DOCUMENT
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer>
+
+        <div class="footer-socials">
+
+            <a
+                class="social-link instagram"
+                href="https://instagram.com"
+                target="_blank"
+            >
+                Instagram
+            </a>
+
+            <a
+                class="social-link linkedin"
+                href="https://linkedin.com"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                class="social-link whatsapp"
+                href="https://wa.me/"
+                target="_blank"
+            >
+                WhatsApp
+            </a>
+
+        </div>
+
+        <p>
+            © 2026 Fallqyun — Growth Journey
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

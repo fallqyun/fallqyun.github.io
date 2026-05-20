@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fallqyun | Growth Journey</title>
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- LOCAL STYLE -->
+    <style>
+
+        /* ========================= */
+        /* RUNNING WRAPPER */
+        /* ========================= */
+
+        .running-wrapper{
+            width:94%;
+            max-width:1600px;
+
+            margin:auto;
+
+            margin-top:-10px;
+            margin-bottom:20px;
+
+            overflow:hidden;
+        }
+
+        /* RUNNING TEXT */
+
+        .running-text{
+            width:100%;
+
+            padding:22px 0;
+
+            border-radius:0 0 32px 32px;
+
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid rgba(255,255,255,0.18);
+
+            backdrop-filter:blur(10px);
+
+            box-shadow:
+                0 0 25px rgba(255,255,255,0.04),
+                inset 0 0 20px rgba(255,255,255,0.03);
+
+            overflow:hidden;
+        }
+
+        /* TRACK */
+
+        .running-track{
+            display:flex;
+
+            width:max-content;
+
+            animation:
+                marquee 20s linear infinite;
+        }
+
+        /* TEXT */
+
+        .running-track span{
+            font-size:16px;
+
+            font-weight:600;
+
+            letter-spacing:1px;
+
+            color:transparent;
+
+            -webkit-text-stroke:
+                1px rgba(255,255,255,0.95);
+
+            padding-right:80px;
+
+            white-space:nowrap;
+
+            text-transform:uppercase;
+        }
+
+        /* ANIMATION */
+
+        @keyframes marquee{
+
+            from{
+                transform:translateX(0);
+            }
+
+            to{
+                transform:translateX(-50%);
+            }
+        }
+
+        /* ========================= */
+        /* ABOUT SECTION */
+        /* ========================= */
+
+        .about-section{
+            padding:10px 6% 45px;
+        }
+
+        /* ABOUT CONTAINER */
+
+        .about-container{
+            display:grid;
+
+            grid-template-columns:
+                0.9fr
+                1.2fr
+                0.9fr
+                0.9fr;
+
+            align-items:center;
+
+            gap:35px;
+        }
+
+        /* IMAGE */
+
+        .about-image{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .about-image img{
+            width:100%;
+            max-width:300px;
+
+            aspect-ratio:1/1;
+
+            object-fit:cover;
+
+            border-radius:30px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            box-shadow:
+                0 20px 40px rgba(0,0,0,0.4);
+
+            transition:0.4s ease;
+        }
+
+        .about-image img:hover{
+            transform:
+                translateY(-10px)
+                scale(1.02);
+        }
+
+        /* CENTER */
+
+        .about-center{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        /* TAG */
+
+        .about-tag{
+            display:inline-block;
+
+            width:fit-content;
+
+            padding:8px 16px;
+
+            border-radius:30px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            color:#00ff9f;
+
+            letter-spacing:2px;
+            font-size:13px;
+
+            margin-bottom:25px;
+        }
+
+        /* TITLE */
+
+        .about-center h2{
+            font-size:60px;
+
+            line-height:1.1;
+
+            max-width:500px;
+        }
+
+        /* CARD */
+
+        .about-card{
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid rgba(255,255,255,0.05);
+
+            backdrop-filter:blur(12px);
+
+            border-radius:30px;
+
+            padding:35px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.3);
+
+            transition:0.4s ease;
+        }
+
+        .about-card:hover{
+            transform:translateY(-8px);
+
+            border-color:
+                rgba(0,255,159,0.2);
+        }
+
+        /* TEXT */
+
+        .about-card p{
+            font-size:16px;
+
+            line-height:1.8;
+
+            color:#bdbdbd;
+
+            margin-bottom:20px;
+        }
+
+        /* ========================= */
+        /* JOURNEY SECTION */
+        /* ========================= */
+
+        .journey-section{
+            padding:1px 10%;
+        }
+
+        /* HEADER */
+
+        .journey-header{
+            margin-bottom:80px;
+        }
+
+        .journey-tag{
+            display:inline-block;
+
+            padding:8px 16px;
+
+            border-radius:30px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            color:#00ff9f;
+
+            letter-spacing:2px;
+            font-size:13px;
+
+            margin-bottom:20px;
+        }
+
+        .journey-header h2{
+            font-size:64px;
+
+            line-height:1.1;
+        }
+
+        /* TIMELINE */
+
+        .timeline{
+            position:relative;
+
+            margin-left:20px;
+
+            border-left:
+                2px solid rgba(255,255,255,0.08);
+        }
+
+        /* ITEM */
+
+        .timeline-item{
+            position:relative;
+
+            padding-left:50px;
+            padding-bottom:70px;
+        }
+
+        /* DOT */
+
+        .timeline-dot{
+            position:absolute;
+
+            left:-11px;
+            top:5px;
+
+            width:20px;
+            height:20px;
+
+            background:#00ff9f;
+
+            border-radius:50%;
+
+            box-shadow:
+                0 0 15px rgba(0,255,159,0.7);
+        }
+
+        /* CONTENT */
+
+        .timeline-content{
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid rgba(255,255,255,0.05);
+
+            backdrop-filter:blur(10px);
+
+            border-radius:25px;
+
+            padding:30px;
+
+            transition:0.4s ease;
+        }
+
+        .timeline-content:hover{
+            transform:translateY(-8px);
+
+            border-color:
+                rgba(0,255,159,0.2);
+        }
+
+        /* YEAR */
+
+        .timeline-year{
+            color:#00ff9f;
+
+            font-size:14px;
+
+            letter-spacing:1px;
+        }
+
+        /* TITLE */
+
+        .timeline-content h3{
+            margin-top:10px;
+            margin-bottom:15px;
+
+            font-size:28px;
+        }
+
+        /* TEXT */
+
+        .timeline-content p{
+            color:#bdbdbd;
+
+            line-height:1.8;
+
+            font-size:15px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width:1200px){
+
+            .about-container{
+                grid-template-columns:1fr;
+            }
+
+            .about-center{
+                text-align:center;
+                align-items:center;
+            }
+
+            .about-center h2{
+                font-size:52px;
+            }
+        }
+
+        @media (max-width:768px){
+
+            .journey-header h2{
+                font-size:42px;
+            }
+
+            .about-center h2{
+                font-size:42px;
+            }
+
+            .timeline-item{
+                padding-left:35px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body class="home-page">
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+<nav class="navbar">
+
+    <!-- LEFT MENU -->
+    <div class="nav-group left">
+
+        <a href="index.html" class="nav-link active">
+            About Me
+        </a>
+
+        <a href="dashboard.html" class="nav-link">
+            Dashboard
+        </a>
+
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo">
+
+        <span class="logo-icon"></span>
+
+        Fallqyun
+
+    </div>
+
+        <!-- RIGHT MENU -->
+    <div class="nav-group right">
+
+        <a href="projects.html" class="nav-link">
+            Projects
+        </a>
+
+        <a
+            href="login.html"
+            class="nav-link"
+            id="authButton"
+        >
+            Login
+        </a>
+
+    </div>
+
+    <!-- INDICATOR -->
+    <div class="indicator"></div>
+
+</nav>
+
+    <!-- ========================= -->
+    <!-- HERO SECTION -->
+    <!-- ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- RUNNING TEXT -->
+    <!-- ========================= -->
+
+    <section class="running-wrapper">
+
+        <div class="running-text">
+
+            <div class="running-track">
+
+                <span>
+                    Creator by Fallqyun
+                    &nbsp; | &nbsp;
+                    IG : Fallqyun
+                    &nbsp; | &nbsp;
+                    LinkedIn : Muhamad (Fallqyun) Naufal
+                    &nbsp; | &nbsp;
+                </span>
+
+                <span>
+                    Creator by Fallqyun
+                    &nbsp; | &nbsp;
+                    IG : Fallqyun
+                    &nbsp; | &nbsp;
+                    LinkedIn : Muhamad (Fallqyun) Naufal
+                    &nbsp; | &nbsp;
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="ambient-stage">
+
+        <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
+
+    <!-- ========================= -->
+    <!-- ABOUT SECTION -->
+    <!-- ========================= -->
+
+    <section class="about-section">
+
+        <div class="about-container">
+
+            <div class="about-image">
+
+                <img src="profile.jpg" alt="Fallqyun">
+
+            </div>
+
+            <div class="about-center">
+
+                <span class="about-tag">
+                    WHO I AM
+                </span>
+
+                <h2>
+                    Redefining <br>
+                    Technology <br>
+                    Experience.
+                </h2>
+
+            </div>
+
+            <div class="about-card">
+
+                <p>
+                    I am an Informatics Engineering graduate from
+                    Cendekia Abditama University, graduating in 2024.
+                </p>
+
+                <p>
+                    I have a strong passion for technology,
+                    operational systems, innovation,
+                    and communication-driven problem solving.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <p>
+                    As an ambitious individual with a strong sense
+                    of discipline, I believe growth comes from
+                    consistency, courage, and continuous self-development.
+                </p>
+
+                <p>
+                    Through this website, I document my journey,
+                    mindset, experiences, and progress toward becoming
+                    a better version of myself every single day.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- JOURNEY SECTION -->
+    <!-- ========================= -->
+
+    <section class="journey-section">
+
+        <div class="journey-header">
+
+            <span class="journey-tag">
+                MY JOURNEY
+            </span>
+
+            <h2>
+                The Path That <br>
+                Shaped Me.
+            </h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-year">
+                        2020 — 2024
+                    </span>
+
+                    <h3>Education</h3>
+
+                    <p>
+                        Started my Informatics Engineering journey at
+                        Cendekia Abditama University and developed
+                        a strong passion for technology, systems,
+                        and innovation-driven problem solving.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-year">
+                        2021 — 2023
+                    </span>
+
+                    <h3>PMB Staff</h3>
+
+                    <p>
+                        Worked at Cendekia Abditama University,
+                        focusing on IT support, operational assistance,
+                        data processing, and communication
+                        for student admission systems.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-year">
+                        2023 — 2025
+                    </span>
+
+                    <h3>IT Support & Marketing</h3>
+
+                    <p>
+                        Built professional experience handling
+                        technical support, troubleshooting,
+                        operational systems, marketing activities,
+                        and communication-based responsibilities.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span class="timeline-year">
+                        2025 — Present
+                    </span>
+
+                    <h3>General Project Manager</h3>
+
+                    <p>
+                        Responsible for vendor coordination,
+                        operational planning, project continuity,
+                        and managing collaborative activities
+                        across multiple operational environments.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-socials">
+            <a class="social-link instagram" href="https://www.instagram.com/fallqyun/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Fallqyun">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2Zm-.1 2A3.7 3.7 0 0 0 4 7.7v8.6A3.7 3.7 0 0 0 7.7 20h8.6a3.7 3.7 0 0 0 3.7-3.7V7.7A3.7 3.7 0 0 0 16.3 4H7.7Zm8.8 1.8a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+                </svg>
+                <span>Instagram</span>
+            </a>
+            <a class="social-link linkedin" href="https://www.linkedin.com/in/fallqyun?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Fallqyun">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6.94 8.98H3.72V20h3.22V8.98ZM5.33 4a1.86 1.86 0 1 0 0 3.72 1.86 1.86 0 0 0 0-3.72Zm14.95 9.96c0-3.17-1.69-4.65-3.95-4.65a3.42 3.42 0 0 0-3.08 1.69h-.04V8.98h-3.09V20h3.22v-5.45c0-1.44.27-2.83 2.05-2.83 1.76 0 1.79 1.64 1.79 2.92V20h3.22v-6.04h-.12Z"/>
+                </svg>
+                <span>LinkedIn</span>
+            </a>
+            <a class="social-link whatsapp" href="https://wa.me/6285156921498" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Fallqyun">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.07 4.93A9.9 9.9 0 0 0 12.03 2C6.56 2 2.1 6.45 2.1 11.93c0 1.75.46 3.46 1.33 4.97L2 22l5.23-1.37a9.92 9.92 0 0 0 4.8 1.23h.01c5.48 0 9.93-4.45 9.93-9.93a9.88 9.88 0 0 0-2.9-7Zm-7.03 15.25h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.1.82.83-3.03-.2-.31a8.23 8.23 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.25-8.24a8.18 8.18 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.82c0 4.55-3.7 8.25-8.24 8.25Zm4.52-6.17c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.29Z"/>
+                </svg>
+                <span>WhatsApp</span>
+            </a>
+            <div class="visit-counter" aria-label="Jumlah kunjungan website">
+                <span class="visit-dot"></span>
+                <span id="visitCount">0</span>
+                <span>Visits</span>
+            </div>
+        </div>
+
+        <p>
+            © 2026 Fallqyun — Growth Journey
+        </p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

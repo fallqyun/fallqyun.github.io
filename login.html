@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fallqyun | Login</title>
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- LOCAL STYLE -->
+    <style>
+
+        /* ========================= */
+        /* LOGIN SECTION */
+        /* ========================= */
+
+        .login-section{
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            padding:140px 20px 80px;
+        }
+
+        /* LOGIN CONTAINER */
+
+        .login-container{
+            width:100%;
+            max-width:520px;
+
+            padding:50px;
+
+            border-radius:35px;
+
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            backdrop-filter:blur(18px);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.35);
+
+            transition:0.35s ease;
+        }
+
+        .login-container:hover{
+            transform:
+                translateY(-5px);
+        }
+
+        /* LOGIN TAG */
+
+        .login-tag{
+            display:inline-block;
+
+            padding:8px 18px;
+
+            border-radius:30px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            color:#00ff9f;
+
+            letter-spacing:2px;
+
+            font-size:12px;
+
+            margin-bottom:20px;
+        }
+
+        /* TITLE */
+
+        .login-container h2{
+            font-size:48px;
+
+            margin-bottom:15px;
+        }
+
+        /* SUBTITLE */
+
+        .login-subtitle{
+            color:#9e9e9e;
+
+            line-height:1.8;
+
+            margin-bottom:35px;
+        }
+
+        /* FORM */
+
+        .login-form{
+            display:flex;
+            flex-direction:column;
+
+            gap:25px;
+        }
+
+        /* INPUT BOX */
+
+        .input-box{
+            display:flex;
+            flex-direction:column;
+        }
+
+        /* LABEL */
+
+        .input-box label{
+            margin-bottom:12px;
+
+            color:#d7d7d7;
+
+            font-size:15px;
+        }
+
+        /* INPUT */
+
+        .input-box input{
+            width:100%;
+
+            padding:18px 22px;
+
+            border-radius:18px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            background:
+                rgba(255,255,255,0.03);
+
+            color:white;
+
+            font-size:15px;
+
+            outline:none;
+
+            transition:0.3s ease;
+        }
+
+        /* INPUT FOCUS */
+
+        .input-box input:focus{
+            border-color:
+                rgba(0,255,159,0.45);
+
+            box-shadow:
+                0 0 18px rgba(0,255,159,0.12);
+        }
+
+        /* PLACEHOLDER */
+
+        .input-box input::placeholder{
+            color:#8f8f8f;
+        }
+
+        /* LOGIN BUTTON */
+
+        .login-btn{
+            margin-top:10px;
+
+            padding:18px;
+
+            border:none;
+
+            border-radius:18px;
+
+            background:#00ff9f;
+
+            color:black;
+
+            font-size:15px;
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:0.35s ease;
+
+            box-shadow:
+                0 15px 30px rgba(0,255,159,0.18);
+        }
+
+        /* HOVER */
+
+        .login-btn:hover{
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 20px 40px rgba(0,255,159,0.24);
+        }
+
+        /* ========================= */
+        /* REQUEST ACCESS BUTTON */
+        /* ========================= */
+
+        .request-access-btn{
+            width:100%;
+
+            padding:18px;
+
+            border-radius:18px;
+
+            text-decoration:none;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            color:white;
+
+            font-size:15px;
+            font-weight:500;
+
+            transition:0.35s ease;
+        }
+
+        .request-access-btn:hover{
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(0,255,159,0.35);
+
+            box-shadow:
+                0 15px 35px rgba(0,255,159,0.08);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width:768px){
+
+            .login-container{
+                padding:35px;
+            }
+
+            .login-container h2{
+                font-size:38px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+
+    <nav class="navbar">
+
+        <!-- LEFT MENU -->
+        <div class="nav-group left">
+
+            <a href="index.html" class="nav-link">
+                About Me
+            </a>
+
+            <a href="dashboard.html" class="nav-link">
+                Dashboard
+            </a>
+
+        </div>
+
+        <!-- LOGO -->
+        <div class="logo">
+
+            <span class="logo-icon"></span>
+
+            Fallqyun
+
+        </div>
+
+        <!-- RIGHT MENU -->
+        <div class="nav-group right">
+
+            <a href="projects.html" class="nav-link">
+                Projects
+            </a>
+
+            <a
+                href="login.html"
+                class="nav-link active"
+                id="authButton"
+            >
+                Login
+            </a>
+
+        </div>
+
+        <!-- INDICATOR -->
+        <div class="indicator"></div>
+
+    </nav>
+
+    <!-- ========================= -->
+    <!-- LOGIN SECTION -->
+    <!-- ========================= -->
+
+    <section class="login-section">
+
+        <div class="login-container">
+
+            <span class="login-tag">
+                SECURE ACCESS
+            </span>
+
+            <h2>
+                Welcome Back
+            </h2>
+
+            <p class="login-subtitle">
+                Sign in to continue your personal
+                growth journey and unlock your
+                dashboard experience.
+            </p>
+
+            <!-- FORM -->
+
+            <form class="login-form">
+
+                <!-- USERNAME -->
+
+                <div class="input-box">
+
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="input-box">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <button type="submit" class="login-btn">
+                    Login Account
+                </button>
+
+                <!-- REQUEST ACCESS -->
+
+                <a
+                    href="https://instagram.com/fallqyun"
+                    target="_blank"
+                    class="request-access-btn"
+                >
+
+                    Request Access
+
+                </a>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer>
+
+        <div class="footer-socials">
+            <a class="social-link instagram" href="https://www.instagram.com/fallqyun/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Fallqyun"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2Zm-.1 2A3.7 3.7 0 0 0 4 7.7v8.6A3.7 3.7 0 0 0 7.7 20h8.6a3.7 3.7 0 0 0 3.7-3.7V7.7A3.7 3.7 0 0 0 16.3 4H7.7Zm8.8 1.8a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg><span>Instagram</span></a>
+            <a class="social-link linkedin" href="https://www.linkedin.com/in/fallqyun?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Fallqyun"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.98H3.72V20h3.22V8.98ZM5.33 4a1.86 1.86 0 1 0 0 3.72 1.86 1.86 0 0 0 0-3.72Zm14.95 9.96c0-3.17-1.69-4.65-3.95-4.65a3.42 3.42 0 0 0-3.08 1.69h-.04V8.98h-3.09V20h3.22v-5.45c0-1.44.27-2.83 2.05-2.83 1.76 0 1.79 1.64 1.79 2.92V20h3.22v-6.04h-.12Z"/></svg><span>LinkedIn</span></a>
+            <a class="social-link whatsapp" href="https://wa.me/6285156921498" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Fallqyun"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.07 4.93A9.9 9.9 0 0 0 12.03 2C6.56 2 2.1 6.45 2.1 11.93c0 1.75.46 3.46 1.33 4.97L2 22l5.23-1.37a9.92 9.92 0 0 0 4.8 1.23h.01c5.48 0 9.93-4.45 9.93-9.93a9.88 9.88 0 0 0-2.9-7Zm-7.03 15.25h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.1.82.83-3.03-.2-.31a8.23 8.23 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.25-8.24a8.18 8.18 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.82c0 4.55-3.7 8.25-8.24 8.25Zm4.52-6.17c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.78.96-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg><span>WhatsApp</span></a>
+            <div class="visit-counter" aria-label="Jumlah kunjungan website"><span class="visit-dot"></span><span id="visitCount">0</span><span>Visits</span></div>
+        </div>
+
+        <p>
+            © 2026 Fallqyun — Growth Journey
+        </p>
+
+    </footer>
+
+    <!-- AUTH CONFIG -->
+    <script src="auth.js"></script>
+
+    <!-- GLOBAL JAVASCRIPT -->
+    <script src="script.js"></script>
+
+    <!-- LOGIN SCRIPT -->
+
+    <script>
+
+        const loginForm =
+            document.querySelector(".login-form");
+
+        loginForm.addEventListener(
+            "submit",
+            function(e){
+
+                e.preventDefault();
+
+                const username =
+                    document.querySelector(
+                        'input[type="text"]'
+                    ).value;
+
+                const password =
+                    document.querySelector(
+                        'input[type="password"]'
+                    ).value;
+
+                /* VALIDATION */
+
+                if(
+                    username === AUTH.username
+                    &&
+                    password === AUTH.password
+                ){
+
+                    localStorage.setItem(
+                        "loggedIn",
+                        "true"
+                    );
+
+                    alert(
+                        "Login successful.\n\nWelcome back, Fallqyun."
+                    );
+
+                    window.location.href =
+                        "dashboard.html";
+
+                }else{
+
+                    alert(
+                        "Invalid username or password.\n\nPlease try again."
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
