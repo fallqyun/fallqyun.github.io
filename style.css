@@ -614,9 +614,15 @@ footer{
 @media screen and (max-width:768px){
 
     .hero{
-        background:
-            url("banner-mobile.jpg")
-            center center/cover no-repeat;
+
+        background-image:url("banner-mobile.jpg") !important;
+
+        background-size:cover !important;
+
+        background-position:center center !important;
+
+        background-repeat:no-repeat !important;
+
     }
 
 }
