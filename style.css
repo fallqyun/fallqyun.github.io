@@ -256,7 +256,7 @@ body.loaded{
     isolation:isolate;
 
     background:
-        url("banner.jpg")
+        url("bnr1.jpg")
         center center/cover no-repeat;
 
     border:
@@ -615,7 +615,7 @@ footer{
 
     .hero{
 
-        background-image:url("banner-mobile.jpg") !important;
+        background-image:url("bnr2.jpg") !important;
 
         background-size:cover !important;
 
